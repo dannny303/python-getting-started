@@ -1,58 +1,261 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 
-{% block content %}
 
-<div class="jumbotron text-center">
+<!DOCTYPE html>
+<head>
+<html lang="en">
+{% block head %} 
+  {{ super() }}
+{% endblock %}
+</head>
+
+<body>
+{% block navbar %}
+  {{ super() }}
+{% endblock %}
+<div id="content">{% block content %}
+  <header>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+      </ol>
+      <div class="carousel-inner" role="listbox">
+        <!-- Slide One - Set the background image for this slide in the line below -->
+        <div class="carousel-item active" style="background-image: url('/static/Screenshot 2019-05-15 11.47.47.png')">
+          <div class="carousel-caption d-none d-md-block">
+            <h3> </h3>
+            <p></p>
+          </div>
+        </div>
+        <!-- Slide Two - Set the background image for this slide in the line below -->
+        <div class="carousel-item" style="background-image: url('/static/Screenshot 2019-05-13 11.31.45.png')">
+          <div class="carousel-caption d-none d-lg-block">
+            <h3> 16th St. 1912</h3>
+            <p></p>
+          </div>
+        </div>
+        <!-- Slide Three - Set the background image for this slide in the line below -->
+        <div class="carousel-item" style="background-image: url('/static/Exterior 1924.jpg')">
+          <div class="carousel-caption d-none d-lg-block">
+            <h3>Neusteter Co. 1924 </h3>
+            <p></p>
+          </div>
+        </div>
+         <!-- Slide Four - Set the background image for this slide in the line below -->
+         <div class="carousel-item" style="background-image: url('/static/Screenshot 2019-05-13 12.09.34.png')">
+          <div class="carousel-caption d-lg d-lg-block">
+            <h3>Neusteter Co. 1979 </h3>
+            <p></p>
+          </div>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Page Content -->
   <div class="container">
-    <a href="/" class="lang-logo">
-      <img src="{% static 'lang-logo.png'%}">
-    </a>
-    <h1>Getting Started with Python on Heroku</h1>
-    <p>This is a sample Python application deployed to Heroku. It's a reasonably simple app - but a good foundation for understanding how to get the most out of the Heroku platform.</p>
-    <a type="button" class="btn btn-lg btn-default" href="https://devcenter.heroku.com/articles/getting-started-with-python"><span class="glyphicon glyphicon-flash"></span> Getting Started with Python</a>
-    <a type="button" class="btn btn-lg btn-primary" href="https://github.com/heroku/python-getting-started"><span class="glyphicon glyphicon-download"></span> Source on GitHub</a>
-  </div>
-</div>
-<div class="container">
-  <div class="alert alert-info text-center" role="alert">
-    To deploy your own copy, and learn the fundamentals of the Heroku platform, head over to the <a href="https://devcenter.heroku.com/articles/getting-started-with-python" class="alert-link">Getting Started with Python on Heroku</a> tutorial.
+
+    <h1 class="my-4">Welcome to Neusteters</h1>
+
+    <!-- Marketing Icons Section -->
+    <div class="row">
+      <div class="col-lg-4 mb-4">
+        <div class="card h-100">
+          <h4 class="card-header">Management Specialist Inc.</h4>
+          <div class="card-body">
+            <p class="card-text">MSI has been serving Homeowners Associations on the Colorado Front Range since October 1982. MSI was formed for the purpose of managing  Homeowners Associations. 
+              This involves taking in assessments homeowners pay and then assuring that services are provided. </p>
+          </div>
+          <div class="card-footer">
+            <a href="https://www.msihoa.co/" class="btn btn-primary">Learn More</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 mb-4">
+        <div class="card h-100">
+          <h4 class="card-header">Building Services</h4>
+          <div class="card-body">
+            <p class="card-text">Access Fobs, Filters and Garage openers. Information on laddders and loading docks. Entry system info. Laundry. Internet and cable. Mail and package deliveries.</p>
+          </div>
+          <div class="card-footer">
+            <a href="/services" class="btn btn-primary">Learn More</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 mb-4">
+        <div class="card h-100">
+          <h4 class="card-header">Building Rules and Regulations</h4>
+          <div class="card-body">
+            <p class="card-text">Building rules and regulations govern our building. From noise levels to trash to large item moves. Click hear to learn about the rules of the building. </p>
+          </div>
+          <div class="card-footer">
+            <a href="/condodocs" class="btn btn-primary">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.row -->
+<hr>
+    <!-- Portfolio Section
+    <h2>Portfolio Heading</h2>
+    -->
+    <div class="row">
+      <div class="col-lg-4 col-sm-6 portfolio-item">
+        <div class="card h-100">
+          <a href="/portfolio"><img class="card-img-top" src="/static/Screenshot 2019-05-13 12.41.36.png" alt=""></a>
+          <div class="card-body">
+            <h4 class="card-title">
+              <a href="/timeline">The Neusteter Co. Photo History</a>
+            </h4>
+            <p class="card-text">107 years of history. All photos are from the Denver Public Library. In it's heyday The Neusteter Co. was the "Fashion empire of the Rocky Mountians". </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6 portfolio-item">
+        <div class="card h-100">
+          <a href="/mallproject"><img class="card-img-top" src="/static/denver_gallery.gallery.1170.474.high.1.jpg" alt=""></a>
+          <div class="card-body">
+            <h4 class="card-title">
+              <a href="/mallproject">The Future of 16th Street Mall</a>
+            </h4>
+            <p class="card-text"> Denver, RTD, and the Downtown Denver Partnership plan to reconstruct the historic 16th Street Mall to address infrastructure, mobility, safety, and public use needs. The project will install a new granite paver system with improved surface friction and proper drainage.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6 portfolio-item">
+        <div class="card h-100">
+          <a href="/projects"><img class="card-img-top" src="/static/240_F_44998829_gVWe4lXS15uZzNF2JZI60YkKFXDBQo7w.jpg" alt=""></a>
+          <div class="card-body">
+            <h4 class="card-title">
+              <a href="/projects">Neusteters Construction Projects</a>
+            </h4>
+            <p class="card-text">With Parts of the building over a hundred years old it seems there is always some type of project going on. </p>
+          </div>
+        </div>
+      </div>
+    </div>
+       <!-- /.row -->
+       <div class="row">
+        <div class="col-lg-6">
+            <img class="img-fluid rounded" src="/static/HOA-Meeting-event-cover.jpg" alt="">
+          </div>
+          <div class="col-lg-6" >
+            <h2>Home Owners Association meeting! Thursday, August 22th, 2019, 5:00pm</h2>
+            <p>2nd floor conferance room. All residents welcome to attend!</p>
+            <ul>
+              <li>Approval of previous meeting minutes</li>
+              <li>Managers Report</li>
+              <li>Maintenance Report</li>
+              <li>Old Business</li>
+              <li>New Business</li>
+              <li>Pending issues and Delinquencies</li>
+              <li>Pizza</li>
+            </ul>
+            <p>Homeowners' associations (HOA) are legal entities, with the help from the homeowners within the community they 
+            oversee. To keep things running smoothly, HOAs usually hold regular board meetings, as well as annual member
+            meetings.</p>
+            <a href="/static/NEUAgenda08.22.19.doc" class="btn btn-primary">Download Agenda</a>
+          </div>
+        </div>
+        <hr>
+        <!--
+        <div class="row">
+          <div class="col-lg-6">
+            <h2>Downtown Denver Partnership Spring 2019 Security Survey</h2>
+          
+            <p>Please take one minute and fill out our Spring 2019 Security Survey (Link Below).  Also please distribute this 
+              through your company contact list and encourage people to fill it out. We want to capture as much feedback on the
+               perception of safety in downtown.  This survey is for anyone who lives, works and plays downtown. Moving forward 
+               we will send this survey out quarterly.  Thank you for your continued partnership is creating a clean and safe downtown.
+                 </p>
+              <a href="https://www.surveymonkey.com/r/securityspring2019" class="btn btn-primary">Survey Monkey link</a>
+          </div>
+          <div class="col-lg-6">
+            <img class="img-fluid rounded" src="/static/Downtown_Denver_partner.jpg" alt="">
+          </div>
+        </div>
+          <hr>
+      -->
+    <!-- /.row -->
+<div class="row">
+  <div class="col-lg-6">
+      <img class="img-fluid rounded" src="/static/fire.jpg" alt="">
+    </div>
+    <div class="col-lg-6" >
+      <h2>Annual Fire Inspection. Monday, July 29th, 9am - 2pm</h2>
+      <p>All units to be Inspected!</p>
+      <ul>
+        <li>Fire alarm horns and strobes to sound and flash</li>
+        <li>Sprinkler head inspection</li>
+        <li>Extinguisher Check</li>
+        <li>Pull station test</li>
+      </ul>
+      <p>
+        These inspections are required by the local fire marshal, fire codes, and national standards. With your help, we can get the required inspection done with as little as possible discomfort to you. We would like to thank you in advance for your help and understanding. Question or concerns? Please contact the manager.
+        </p>
+      <a href="/static/Annual Fire Alarm Test_ (1).pdf" class="btn btn-primary">Download Notice</a>
+    </div>
   </div>
   <hr>
-  <div class="row">
-    <div class="col-md-6">
-      <h3><span class="glyphicon glyphicon-info-sign"></span> How this sample app works</h3>
-      <ul>
-        <li>This app was deployed to Heroku, either using Git or by using <a href="https://github.com/heroku/python-getting-started">Heroku Button</a> on the repository.</li>
-
-        <li>When Heroku received the source code, it fetched all the dependencies in the <a href="https://github.com/heroku/python-getting-started/blob/master/Pipfile">Pipfile</a>, creating a deployable slug.</li>
-        <li>The platform then spins up a dyno, a lightweight container that provides an isolated environment in which the slug can be mounted and executed.</li>
-        <li>You can scale your app, manage it, and deploy over <a href="https://addons.heroku.com/">150 add-on services</a>, from the Dashboard or CLI.</li>
-      </ul>
-    </div>
-    <div class="col-md-6">
-      <h3><span class="glyphicon glyphicon-link"></span> Next Steps</h3>
-      <ul>
-        <li>If you are following the <a href="https://devcenter.heroku.com/articles/getting-started-with-python">Getting Started</a> guide, then please head back to the tutorial and follow the next steps!</li>
-        <li>If you deployed this app by deploying the Heroku Button, then in a command line shell, run:</li>
+    <!-- Features Section -->
+    <div class="row">
+      <div class="col-lg-6">
+        <h2>Garage Power Wash/Scrubbing is scheduled for Friday, June 21st</h2>
+        <p>8:00 am - 4:00 pm</p>
         <ul>
-          <li><code>git clone https://github.com/heroku/python-getting-started.git</code> - this will create a local copy of the source code for the app</li>
-          <li><code>cd python-getting-started</code> - change directory into the local source code repository</li>
-          <li><code>heroku git:remote -a &lt;your-app-name></code> - associate the Heroku app with the repository</li>
-          <li>You'll now be set up to run the app locally, or <a href="https://devcenter.heroku.com/articles/getting-started-with-python#push-local-changes">deploy changes</a> to Heroku</li>
+          <li>
+            <strong>Please remove all vehicles!</strong>
+          </li>
+          <li>Remove all personal items from parking space area.</li>
+          <li>Elevate items in storage unit.</li>
+    
         </ul>
-      </ul>
-      <h3><span class="glyphicon glyphicon-link"></span> Helpful Links</h3>
-      <ul>
-        <li><a href="https://www.heroku.com/home">Heroku</a></li>
-        <li><a href="https://devcenter.heroku.com/">Heroku Dev Center</a></li>
-        <li><a href="https://devcenter.heroku.com/articles/getting-started-with-python">Getting Started with Python on Heroku</a></li>
-        <li><a href="https://devcenter.heroku.com/articles/django-app-configuration">Configuring Django Apps for Heroku</a></li>
-      </ul>
+        <p>Using blowers and industrial
+          sweepers, we clean up any and all dirt and debris.
+          Then we bring in the pressure washers to clean your lot
+          or structure from top to bottom. We’ll clean up all those
+          unsightly marks using high pressure hot water, scrubbing
+          and treating with biosafe cleaners to renew and maintain a
+          clean, proffessional appearance. </p>
+      </div>
+      <div class="col-lg-6">
+        <img class="img-fluid rounded" src="/static/power-washing.jpg" alt="">
+      </div>
     </div>
-  </div> <!-- row -->
-   <div class="alert alert-info text-center" role="alert">
-    Please do work through the Getting Started guide, even if you do know how to build such an application.  The guide covers the basics of working with Heroku, and will familiarize you with all the concepts you need in order to build and deploy your own apps.
+    <hr>
+
+    <!-- Call to Action Section -->
+    <div class="row mb-4">
+      <div class="col-md-8">
+        <p>See something, say something. Downtown can be an exciting place to live, if something seems off or not right please notify someone. </p>
+      </div>
+      <div class="col-md-4">
+        <a class="btn btn-lg btn-secondary btn-danger" href="/contact">Report Incident</a>
+      </div>
+    </div>
+    {% endblock %}
   </div>
-</div>
-{% endblock %}
+  </div>
+  <!-- /.container -->
+  <!-- Footer -->
+  <div id="footer">
+      {% block footer %}
+        {{ super() }}
+      {% endblock %}
+  </div>
+
+</body>
+
+</html>
